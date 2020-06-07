@@ -28,6 +28,7 @@ namespace SmartphoneScan.View
 		{
 			InitializeComponent ();
 
+            // ビューモデルの生成
             viewModel = new ShoppingBarcodeReadPageViewModel();
 
             // スキャナーの設定
