@@ -2,6 +2,9 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace SmartphoneScan
@@ -20,7 +23,8 @@ namespace SmartphoneScan
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            AppCenter.Start("android=b2124dd1-f46b-439d-ac28-4073f68e2922;",
+                  typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()

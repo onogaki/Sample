@@ -6,6 +6,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace SmartphoneScan.Droid
 {
@@ -16,6 +19,9 @@ namespace SmartphoneScan.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            AppCenter.Start("b2124dd1-f46b-439d-ac28-4073f68e2922",
+                   typeof(Analytics), typeof(Crashes));
 
             base.OnCreate(savedInstanceState);
 
