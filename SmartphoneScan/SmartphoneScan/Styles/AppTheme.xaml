@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartphoneScan.Styles.AppTheme">
+
+    <Style x:Key="headerTitle" TargetType="Label">
+        <Setter Property="FontFamily" Value="Verdana" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <Style x:Key="buttonNormalTitle" TargetType="Button">
+        <Setter Property="FontFamily" Value="Verdana" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BackgroundColor"  Value="DeepSkyBlue" />
+    </Style>
+
+    <Style x:Key="buttonCircleTitle" TargetType="Button">
+        <Setter Property="FontFamily" Value="Verdana" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+    
+    <Style x:Key="buttonShortTitle" TargetType="Button">
+        <Setter Property="FontFamily" Value="Verdana" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <Style x:Key="buttonSmallTitle" TargetType="Button">
+        <Setter Property="FontFamily" Value="Verdana" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <Style x:Key="itemTitle" TargetType="Label">
+        <Setter Property="FontFamily" Value="Verdana" />
+        <Setter Property="FontSize" Value="20" />
+    </Style>
+
+    <Style x:Key="priceTitle" TargetType="Label">
+        <Setter Property="FontFamily" Value="Verdana" />
+        <Setter Property="FontSize" Value="23" />
+    </Style>
+
+    <Style x:Key="scannerQRBackgroundColor" TargetType="BoxView">
+        <Setter Property="BackgroundColor"  Value="#80000000" />
+    </Style>
+
+    <Style x:Key="scannerBarBackgroundColor" TargetType="BoxView">
+        <Setter Property="BackgroundColor"  Value="#80000000" />
+    </Style>
+</ResourceDictionary>

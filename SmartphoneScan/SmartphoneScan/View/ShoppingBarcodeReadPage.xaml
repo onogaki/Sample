@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:theme="clr-namespace:SmartphoneScan.Styles"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="SmartphoneScan.View.ShoppingBarcodeReadPage">
+
+    <ContentPage.Resources>
+        <theme:AppTheme />
+    </ContentPage.Resources>
+
+    <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="Transparent" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <zxing:ZXingScannerView x:Name="BarCodeScanner" Grid.RowSpan="3" Grid.Column="0"></zxing:ZXingScannerView>
+
+        <BoxView Grid.Row="0" 
+                 Grid.Column="0" 
+                 Style="{StaticResource scannerQRBackgroundColor}"/>
+        <BoxView Grid.Row="2" 
+                 Grid.Column="0" 
+                 Style="{StaticResource scannerQRBackgroundColor}"/>
+
+        <Label Grid.Row="0" 
+               Grid.Column="0" 
+               Margin="0,0,0,10" 
+               BackgroundColor="Transparent" 
+               TextColor="White" 
+               Text="商品のバーコードを読み込んでください。" 
+               VerticalOptions="End" 
+               HorizontalOptions="Center"/>
+
+        <BoxView x:Name="topLine" 
+                 Grid.Row="1" 
+                 Grid.Column="0" 
+                 Margin="1,1,1,0" 
+                 BackgroundColor="White" 
+                 HeightRequest="1" 
+                 VerticalOptions="Start" 
+                 HorizontalOptions="FillAndExpand"/>
+        <BoxView x:Name="bottomLine" 
+                 Grid.Row="1" 
+                 Grid.Column="0" 
+                 Margin="1,0,1,1" 
+                 BackgroundColor="White" 
+                 HeightRequest="1"
+                 VerticalOptions="End" 
+                 HorizontalOptions="FillAndExpand"/>
+
+        <!--<Button
+                x:Name="btnReturnCartPage"
+                Grid.Row="2"
+                Grid.Column="0"
+                BackgroundColor="red"
+                Text="カート画面に戻る"
+                TextColor="White"
+                BorderColor="White"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                HeightRequest="80"
+                />-->
+        <pancake:PancakeView
+                Grid.Row="2"
+                Grid.Column="0"
+                CornerRadius="10"
+                HeightRequest="45"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BorderColor="White"
+                BorderThickness="2"
+                BackgroundColor="Transparent"
+                >
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Text="カート画面に戻る"
+                    TextColor="White"
+                    BackgroundColor="Transparent"
+                    />
+                <pancake:PancakeView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                </pancake:PancakeView.GestureRecognizers>
+        </pancake:PancakeView>
+    </Grid>
+</ContentPage>

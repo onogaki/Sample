@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:SmartphoneScan.Control"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:theme="clr-namespace:SmartphoneScan.Styles"
+             x:Class="SmartphoneScan.View.TopPage">
+    
+    <ContentPage.Resources>
+        <theme:AppTheme />
+    </ContentPage.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="38" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- 背景 -->
+        <Image
+            Grid.RowSpan="2"
+            Aspect="Fill"
+            Source="header_background" />
+
+        <!-- ヘッダー -->
+        <controls:HeaderPage />
+
+        <!-- メインエリア -->
+        <pancake:PancakeView
+            Grid.Row="1"
+            Margin="0"
+            Padding="10"
+            BackgroundColor="whitesmoke"
+            CornerRadius="15,15,0,0"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            >
+            <Grid RowSpacing="0" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.Row="0"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="店内にあるQRボートのQRコードを読み込んでください。"
+                />
+                <Image
+                    Grid.Row="1"
+                    Aspect="AspectFit"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    >
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource" iOS="shopping.png" Android="shopping.png"/>
+                    </Image.Source>
+                </Image>
+                <controls:NormalButton
+                    Grid.Row="2"
+                    x:Name="btnQRScan"
+                    Text="QRコード スキャン"
+                    Style="{StaticResource buttonNormalTitle}"
+                    HorizontalOptions="Fill"
+                    Margin="50,0,50,0"
+                    Clicked="BtnQRScan_Clicked"
+                />
+            </Grid>
+        </pancake:PancakeView>
+    </Grid>  
+</ContentPage>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:theme="clr-namespace:SmartphoneScan.Styles"
+             x:Class="SmartphoneScan.Control.HeaderPage">
+
+    <ContentView.Resources>
+        <theme:AppTheme />
+    </ContentView.Resources>
+
+    <Grid VerticalOptions="Start">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image
+            Margin="10,10,10,0"
+            HorizontalOptions="Start"
+            VerticalOptions="Center">
+        </Image>
+        <Label
+            Grid.Column="1"
+            Margin="0,10,0,0"
+            HorizontalOptions="Start"
+            Text="{Binding HeaderStoreName}"
+            Style="{StaticResource headerTitle}"
+        />
+    </Grid>
+</ContentView>
